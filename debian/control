@@ -1,0 +1,49 @@
+Source: jigit
+Section: utils
+Priority: optional
+Maintainer: Steve McIntyre <93sam@debian.org>
+Build-Depends: debhelper (>= 10), zlib1g-dev, libbz2-dev
+Standards-Version: 4.3.0
+Homepage: https://www.einval.com/~steve/software/JTE/
+
+Package: jigit
+Section: utils
+Priority: optional
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libio-compress-perl
+Recommends: wget
+Description: tools for working with jigdo files
+ Utilities written to make jigdo files easier to work with.
+ .
+  jigit-mkimage: program to create images from jigdo files
+  jigdump:       list the contents of a template file 
+  jigsum:        Output MD5 sums in the base64-style jigdo way
+  jigsum-sha256: Output SHA256 sums in the base64-style jigdo way
+  mkjigsnap:     helper script to be run on the upstream server
+  parallel-sums: program to generate multiple checksums in parallel
+
+Package: libjte2
+Section: libs
+Priority: optional
+Architecture: any
+Multi-Arch: same
+Pre-Depends: ${misc:Pre-Depends}
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Jigdo Template Export - runtime library
+ libjte is a library providing support for creating jigdo files, to be
+ used by ISO image creation tools such as xorriso.
+ .
+ This package provides the runtime library file needed to run software
+ written using libjte
+
+Package: libjte-dev
+Section: libdevel
+Priority: optional
+Architecture: any
+Depends: ${misc:Depends}, ${shlibs:Depends}, zlib1g-dev, libbz2-dev, libjte2 (= ${binary:Version})
+Description: Jigdo Template Export - development
+ libjte is a library providing support for creating jigdo files, to be
+ used by ISO image creation tools such as xorriso.
+ .
+ This package provides the header and development files needed to build
+ programs and packages that use libjte.
