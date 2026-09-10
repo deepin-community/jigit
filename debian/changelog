@@ -1,3 +1,9 @@
+jigit (1.22-4) unstable; urgency=medium
+
+  * Rebuild with LTO enabled (dpkg vendor feature optimize/lto).
+
+ -- tunaichao <tunaichao@uniontech.com>  Thu, 10 Sep 2026 17:44:08 +0800
+
 jigit (1.22-3) unstable; urgency=medium
 
   * Multiarchify the library packages. Closes: #812946. Thanks to Matthias
